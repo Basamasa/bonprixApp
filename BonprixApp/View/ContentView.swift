@@ -9,14 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = ContenViewModel()
+    @State var text: String = ""
     
     var body: some View {
         TabView {
-            ShopView(webModel: WebViewModel(urlName: viewModel.shopURL), label: viewModel.shopLabel)
+            ShopView(viewModel: viewModel.shopViewModel)
                 .tabItem {
                     Label("Shop", systemImage: "tray.and.arrow.down.fill")
                 }
-            SortimentView()
+            NavigationView {
+                    ReusableView(title: "Assortment", categories: viewModel.categories)
+                        .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
+                }
                 .tabItem {
                     Label("Assortment", systemImage: "magnifyingglass")
                 }

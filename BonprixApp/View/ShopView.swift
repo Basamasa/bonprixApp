@@ -8,32 +8,24 @@
 import SwiftUI
 
 struct ShopView: View {
+    var viewModel: ShopViewModel
     @State var text: String = ""
-    var webModel: WebViewModel
-    var label: String
-    
+
     var body: some View {
         NavigationView {
-            VStack {
-                if viewModel.isErrorShown {
-                    Text(viewModel.errorMessage)
-                } else if viewModel.categories.isEmpty {
-                    ProgressView()
-                } else {
-                    VStack {
-                        TextField("Suchen", text: $text)
-                        WebView(webView: WebViewModel(urlName: viewModel.categories[0].url!).webView)
-                    }
-                    .navigationTitle(viewModel.categories[0].label)
+            ZStack {
+                if let url = viewModel.url {
+                    WebView(model: WebViewModel(url: url))
                 }
             }
-            .navigationViewStyle(.stack)
+            .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
+            .navigationTitle(viewModel.category?.label ?? "Shop")
         }
     }
 }
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView()
+        ShopView(viewModel: ShopViewModel(category: Category(label: "Shop", url: "www.google.com", image: nil, children: nil)))
     }
 }

@@ -31,7 +31,6 @@ final class APIHandler: APIHandlerType {
         request.addValue("N8Nx0OwOvo1iuN2ZkFHZlyVKBVgoIcy4tUHMppO5", forHTTPHeaderField: "x-api-key")
         
         let decoder = JSONDecoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { data, urlResponse in data }

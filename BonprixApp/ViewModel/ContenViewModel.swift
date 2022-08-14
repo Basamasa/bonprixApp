@@ -7,26 +7,25 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class ContenViewModel: ObservableObject {
     
     private var apiHandler: APIHandlerType
     private let onAppearSubject = PassthroughSubject<Void, Never>()
-    private var cancellables: [AnyCancellable] = []
-
     private let responseSubject = PassthroughSubject<Welcome, Never>()
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
+    private var cancellables: [AnyCancellable] = []
 
     @Published var categories: [Category] = []
     @Published var errorMessage = ""
     @Published var isErrorShown = false
     
-    var shopURL: String {
-        categories[0].url
-    }
-    
-    var shopLabel: String {
-        categories[0].label
+    var shopViewModel: ShopViewModel {
+        if categories.isEmpty {
+            return ShopViewModel(category: nil)
+        }
+        return ShopViewModel(category: categories[0])
     }
     
     init(apiHandler: APIHandlerType = APIHandler()) {

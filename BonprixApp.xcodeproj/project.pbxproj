@@ -19,9 +19,13 @@
 		6B55F4C728A7DE85002BCE81 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4C628A7DE85002BCE81 /* APIRequest.swift */; };
 		6B55F4C928A7DF2F002BCE81 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4C828A7DF2F002BCE81 /* WelcomeModel.swift */; };
 		6B55F4CB28A7EBC5002BCE81 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */; };
-		6B55F4CD28A7EBED002BCE81 /* SortimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CC28A7EBED002BCE81 /* SortimentView.swift */; };
-		6B55F4CF28A7EFEB002BCE81 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CE28A7EFEB002BCE81 /* WebView.swift */; };
+		6B55F4CF28A7EFEB002BCE81 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */; };
 		6B55F4D128A7F02E002BCE81 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */; };
+		6B55F4D528A91CBE002BCE81 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */; };
+		6B55F4D728A92558002BCE81 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D628A92558002BCE81 /* ReusableView.swift */; };
+		6B55F4DA28A93F90002BCE81 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */; };
+		6B55F4DC28A93FA9002BCE81 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */; };
+		6B55F4DE28A95256002BCE81 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4DD28A95256002BCE81 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +61,13 @@
 		6B55F4C628A7DE85002BCE81 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		6B55F4C828A7DF2F002BCE81 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
 		6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
-		6B55F4CC28A7EBED002BCE81 /* SortimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortimentView.swift; sourceTree = "<group>"; };
-		6B55F4CE28A7EFEB002BCE81 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
 		6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		6B55F4D628A92558002BCE81 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		6B55F4DD28A95256002BCE81 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +157,10 @@
 		6B55F4BD28A7D6CE002BCE81 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B55F4D828A93F79002BCE81 /* HelperView */,
 				6B55F49428A7D405002BCE81 /* ContentView.swift */,
 				6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */,
-				6B55F4CC28A7EBED002BCE81 /* SortimentView.swift */,
-				6B55F4CE28A7EFEB002BCE81 /* WebView.swift */,
+				6B55F4D628A92558002BCE81 /* ReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 			children = (
 				6B55F4C228A7D727002BCE81 /* ContenViewModel.swift */,
 				6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */,
+				6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,6 +190,17 @@
 				6B55F4C628A7DE85002BCE81 /* APIRequest.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		6B55F4D828A93F79002BCE81 /* HelperView */ = {
+			isa = PBXGroup;
+			children = (
+				6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */,
+				6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */,
+				6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */,
+				6B55F4DD28A95256002BCE81 /* WebView.swift */,
+			);
+			path = HelperView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,13 +336,17 @@
 				6B55F4C328A7D727002BCE81 /* ContenViewModel.swift in Sources */,
 				6B55F49528A7D405002BCE81 /* ContentView.swift in Sources */,
 				6B55F4CB28A7EBC5002BCE81 /* ShopView.swift in Sources */,
+				6B55F4DA28A93F90002BCE81 /* ActivityIndicatorView.swift in Sources */,
 				6B55F4D128A7F02E002BCE81 /* WebViewModel.swift in Sources */,
 				6B55F49328A7D405002BCE81 /* BonprixAppApp.swift in Sources */,
 				6B55F4C928A7DF2F002BCE81 /* WelcomeModel.swift in Sources */,
 				6B55F4C728A7DE85002BCE81 /* APIRequest.swift in Sources */,
-				6B55F4CF28A7EFEB002BCE81 /* WebView.swift in Sources */,
-				6B55F4CD28A7EBED002BCE81 /* SortimentView.swift in Sources */,
+				6B55F4D728A92558002BCE81 /* ReusableView.swift in Sources */,
+				6B55F4D528A91CBE002BCE81 /* ShopViewModel.swift in Sources */,
+				6B55F4CF28A7EFEB002BCE81 /* WebViewRepresentable.swift in Sources */,
+				6B55F4DC28A93FA9002BCE81 /* LoadingView.swift in Sources */,
 				6B55F4C528A7D7A6002BCE81 /* APIHandler.swift in Sources */,
+				6B55F4DE28A95256002BCE81 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +513,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +543,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

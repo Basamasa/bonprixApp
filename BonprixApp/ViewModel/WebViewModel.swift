@@ -8,16 +8,10 @@
 import WebKit
 
 final class WebViewModel: ObservableObject {
-    let webView: WKWebView
-    let url: URL
+    @Published var url: String
+    @Published var isLoading: Bool = true
     
-    init(urlName: String) {
-        webView = WKWebView(frame: .zero)
-        url = URL(string: urlName)!
-        loadUrl()
-    }
-    
-    func loadUrl() {
-        webView.load(URLRequest(url: url))
+    init (url: String) {
+        self.url = url
     }
 }
