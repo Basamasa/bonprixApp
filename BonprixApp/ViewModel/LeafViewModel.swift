@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ShopViewModel {
+final class LeafViewModel {
     var webModel: WebViewModel?
     var category: Category?
     

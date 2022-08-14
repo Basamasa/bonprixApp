@@ -16,10 +16,9 @@ struct LoadingView<Content>: View where Content: View {
             ZStack(alignment: .center) {
                 self.content()
                     .disabled(self.isShowing)
-                    .blur(radius: self.isShowing ? 3 : 0)
                 
                 VStack {
-                    ActivityIndicatorView(isAnimating: .constant(true), style: .large)
+                    ProgressView()
                 }
                 .opacity(self.isShowing ? 1 : 0)   
             }

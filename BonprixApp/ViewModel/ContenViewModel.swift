@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class ContenViewModel: ObservableObject {
+final class ContenViewModel: ObservableObject {
     
     private var apiHandler: APIHandlerType
     private let onAppearSubject = PassthroughSubject<Void, Never>()
@@ -21,11 +21,18 @@ class ContenViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isErrorShown = false
     
-    var shopViewModel: ShopViewModel {
+    var shopCategory: Category {
         if categories.isEmpty {
-            return ShopViewModel(category: nil)
+            return Category(label: "Shop", url: nil, image: nil, children: nil)
         }
-        return ShopViewModel(category: categories[0])
+        return categories[0]
+    }
+    
+    var assortmentCategories: [Category] {
+        if categories.count > 1 {
+            return Array(categories[1...])
+        }
+        return []
     }
     
     init(apiHandler: APIHandlerType = APIHandler()) {

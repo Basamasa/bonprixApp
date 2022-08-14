@@ -13,17 +13,20 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            ShopView(viewModel: viewModel.shopViewModel)
-                .tabItem {
-                    Label("Shop", systemImage: "tray.and.arrow.down.fill")
-                }
             NavigationView {
-                    ReusableView(title: "Assortment", categories: viewModel.categories)
-                        .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
-                }
-                .tabItem {
-                    Label("Assortment", systemImage: "magnifyingglass")
-                }
+                LeafView(viewModel: LeafViewModel(category: viewModel.shopCategory))
+            }
+            .tabItem {
+                Label("Shop", systemImage: "tray.and.arrow.down.fill")
+            }
+            
+            NavigationView {
+                CategoryView(category: Category(label: "Assortment", url: nil, image: nil, children: viewModel.assortmentCategories))
+                .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
+            }
+            .tabItem {
+                Label("Assortment", systemImage: "magnifyingglass")
+            }
         }
         .onAppear() {
             viewModel.viewAppeared()

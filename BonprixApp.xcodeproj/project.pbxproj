@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B13FDB728A9A2AD007CFC6E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B13FDB628A9A2AD007CFC6E /* ImageView.swift */; };
 		6B55F49328A7D405002BCE81 /* BonprixAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F49228A7D405002BCE81 /* BonprixAppApp.swift */; };
 		6B55F49528A7D405002BCE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F49428A7D405002BCE81 /* ContentView.swift */; };
 		6B55F49728A7D406002BCE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B55F49628A7D406002BCE81 /* Assets.xcassets */; };
@@ -18,12 +19,10 @@
 		6B55F4C528A7D7A6002BCE81 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4C428A7D7A6002BCE81 /* APIHandler.swift */; };
 		6B55F4C728A7DE85002BCE81 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4C628A7DE85002BCE81 /* APIRequest.swift */; };
 		6B55F4C928A7DF2F002BCE81 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4C828A7DF2F002BCE81 /* WelcomeModel.swift */; };
-		6B55F4CB28A7EBC5002BCE81 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */; };
-		6B55F4CF28A7EFEB002BCE81 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */; };
+		6B55F4CB28A7EBC5002BCE81 /* LeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4CA28A7EBC5002BCE81 /* LeafView.swift */; };
 		6B55F4D128A7F02E002BCE81 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */; };
-		6B55F4D528A91CBE002BCE81 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */; };
-		6B55F4D728A92558002BCE81 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D628A92558002BCE81 /* ReusableView.swift */; };
-		6B55F4DA28A93F90002BCE81 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */; };
+		6B55F4D528A91CBE002BCE81 /* LeafViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D428A91CBE002BCE81 /* LeafViewModel.swift */; };
+		6B55F4D728A92558002BCE81 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4D628A92558002BCE81 /* CategoryView.swift */; };
 		6B55F4DC28A93FA9002BCE81 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */; };
 		6B55F4DE28A95256002BCE81 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55F4DD28A95256002BCE81 /* WebView.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B13FDB628A9A2AD007CFC6E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		6B55F48F28A7D405002BCE81 /* BonprixApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonprixApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B55F49228A7D405002BCE81 /* BonprixAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonprixAppApp.swift; sourceTree = "<group>"; };
 		6B55F49428A7D405002BCE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,12 +60,10 @@
 		6B55F4C428A7D7A6002BCE81 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		6B55F4C628A7DE85002BCE81 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		6B55F4C828A7DF2F002BCE81 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
-		6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
-		6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
+		6B55F4CA28A7EBC5002BCE81 /* LeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafView.swift; sourceTree = "<group>"; };
 		6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
-		6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
-		6B55F4D628A92558002BCE81 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		6B55F4D428A91CBE002BCE81 /* LeafViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafViewModel.swift; sourceTree = "<group>"; };
+		6B55F4D628A92558002BCE81 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		6B55F4DD28A95256002BCE81 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,8 +157,8 @@
 			children = (
 				6B55F4D828A93F79002BCE81 /* HelperView */,
 				6B55F49428A7D405002BCE81 /* ContentView.swift */,
-				6B55F4CA28A7EBC5002BCE81 /* ShopView.swift */,
-				6B55F4D628A92558002BCE81 /* ReusableView.swift */,
+				6B55F4CA28A7EBC5002BCE81 /* LeafView.swift */,
+				6B55F4D628A92558002BCE81 /* CategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,7 +168,7 @@
 			children = (
 				6B55F4C228A7D727002BCE81 /* ContenViewModel.swift */,
 				6B55F4D028A7F02E002BCE81 /* WebViewModel.swift */,
-				6B55F4D428A91CBE002BCE81 /* ShopViewModel.swift */,
+				6B55F4D428A91CBE002BCE81 /* LeafViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,10 +193,9 @@
 		6B55F4D828A93F79002BCE81 /* HelperView */ = {
 			isa = PBXGroup;
 			children = (
-				6B55F4D928A93F90002BCE81 /* ActivityIndicatorView.swift */,
 				6B55F4DB28A93FA9002BCE81 /* LoadingView.swift */,
-				6B55F4CE28A7EFEB002BCE81 /* WebViewRepresentable.swift */,
 				6B55F4DD28A95256002BCE81 /* WebView.swift */,
+				6B13FDB628A9A2AD007CFC6E /* ImageView.swift */,
 			);
 			path = HelperView;
 			sourceTree = "<group>";
@@ -333,17 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B13FDB728A9A2AD007CFC6E /* ImageView.swift in Sources */,
 				6B55F4C328A7D727002BCE81 /* ContenViewModel.swift in Sources */,
 				6B55F49528A7D405002BCE81 /* ContentView.swift in Sources */,
-				6B55F4CB28A7EBC5002BCE81 /* ShopView.swift in Sources */,
-				6B55F4DA28A93F90002BCE81 /* ActivityIndicatorView.swift in Sources */,
+				6B55F4CB28A7EBC5002BCE81 /* LeafView.swift in Sources */,
 				6B55F4D128A7F02E002BCE81 /* WebViewModel.swift in Sources */,
 				6B55F49328A7D405002BCE81 /* BonprixAppApp.swift in Sources */,
 				6B55F4C928A7DF2F002BCE81 /* WelcomeModel.swift in Sources */,
 				6B55F4C728A7DE85002BCE81 /* APIRequest.swift in Sources */,
-				6B55F4D728A92558002BCE81 /* ReusableView.swift in Sources */,
-				6B55F4D528A91CBE002BCE81 /* ShopViewModel.swift in Sources */,
-				6B55F4CF28A7EFEB002BCE81 /* WebViewRepresentable.swift in Sources */,
+				6B55F4D728A92558002BCE81 /* CategoryView.swift in Sources */,
+				6B55F4D528A91CBE002BCE81 /* LeafViewModel.swift in Sources */,
 				6B55F4DC28A93FA9002BCE81 /* LoadingView.swift in Sources */,
 				6B55F4C528A7D7A6002BCE81 /* APIHandler.swift in Sources */,
 				6B55F4DE28A95256002BCE81 /* WebView.swift in Sources */,
