@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct CategoryView: View {
+    let imageSize: CGFloat = 150
     var category: Category
-    @State var offset = 1.0 {
-        didSet {
-            print(offset)
-        }
-    }
+    @State var offset = 1.0
     
     var body: some View {
         VStack {
             if let categories = category.children {
                 if let image = category.image {
-                    ImageView(imageName: image, height: 100)
+                    ImageView(imageName: image, height: imageSize)
                         .scaleEffect(CGFloat(offset) + 1)
                 }
                 ScrollView {
@@ -28,7 +25,10 @@ struct CategoryView: View {
                     }
                     .background(GeometryReader { proxy -> Color in
                         DispatchQueue.main.async {
-                            offset = proxy.frame(in: .named("scroll")).origin.y/100
+                            let scaleLevel = proxy.frame(in: .named("scroll")).origin.y / 150
+                            if scaleLevel >= 0 {
+                                offset = scaleLevel
+                            }
                         }
                         return Color.clear
                     })
@@ -39,6 +39,7 @@ struct CategoryView: View {
             }
         }
         .navigationTitle(category.label)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -62,6 +63,9 @@ struct ResuableNavigationView: View {
             HStack {
                 Text("\(category.label)")
                 Spacer()
+                if category.children != nil {
+                    Image(systemName: "chevron.right")
+                }
             }
             Divider()
         }

@@ -18,7 +18,7 @@ final class ContenViewModel: ObservableObject {
     private var cancellables: [AnyCancellable] = []
 
     @Published var categories: [Category] = []
-    @Published var errorMessage = ""
+    @Published var errorMessage = "Enable to connect"
     @Published var isErrorShown = false
     
     var shopCategory: Category {

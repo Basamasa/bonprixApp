@@ -12,12 +12,13 @@ struct LeafView: View {
     @State var text: String = ""
 
     var body: some View {
-        ZStack {
+        VStack {
             if let url = viewModel.url {
                 WebView(model: WebViewModel(url: url))
             }
         }
         .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(viewModel.category?.label ?? "Shop")
     }
 }

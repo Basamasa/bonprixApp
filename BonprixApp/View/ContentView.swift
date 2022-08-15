@@ -11,25 +11,36 @@ struct ContentView: View {
     @StateObject var viewModel = ContenViewModel()
     @State var text: String = ""
     
+    var shopView: some View {
+        NavigationView {
+            LeafView(viewModel: LeafViewModel(category: viewModel.shopCategory))
+        }
+        .tabItem {
+            Label("Shop", systemImage: "tray.and.arrow.down.fill")
+        }
+        
+    }
+    
+    var assortmentView: some View {
+        NavigationView {
+            CategoryView(category: Category(label: "Assortment", url: nil, image: nil, children: viewModel.assortmentCategories))
+            .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
+        }
+        .tabItem {
+            Label("Assortment", systemImage: "magnifyingglass")
+        }
+    }
+    
     var body: some View {
         TabView {
-            NavigationView {
-                LeafView(viewModel: LeafViewModel(category: viewModel.shopCategory))
-            }
-            .tabItem {
-                Label("Shop", systemImage: "tray.and.arrow.down.fill")
-            }
-            
-            NavigationView {
-                CategoryView(category: Category(label: "Assortment", url: nil, image: nil, children: viewModel.assortmentCategories))
-                .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
-            }
-            .tabItem {
-                Label("Assortment", systemImage: "magnifyingglass")
-            }
+            shopView
+            assortmentView
         }
         .onAppear() {
             viewModel.viewAppeared()
+        }
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isErrorShown) {
+            Button("OK", role: .cancel) { }
         }
         .environmentObject(viewModel)
             
