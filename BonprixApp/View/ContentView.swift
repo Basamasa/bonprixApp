@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var shopView: some View {
         NavigationView {
-            LeafView(viewModel: LeafViewModel(category: viewModel.shopCategory))
+            LeafView(category: viewModel.shopCategory)
                 .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
         }
         .tabItem {

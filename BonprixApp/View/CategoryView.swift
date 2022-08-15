@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct CategoryView: View {
-    let imageSize: CGFloat = 150
     var category: Category
-    @State var offset = 1.0
+
+    let imageSize: CGFloat = 150
+    @State var scaleOffset = 1.0
     
     var body: some View {
         VStack {
+            // Parent view
             if let categories = category.children {
                 if let image = category.image {
                     ImageView(imageName: image, height: imageSize)
-                        .scaleEffect(CGFloat(offset) + 1)
+                        .scaleEffect(CGFloat(scaleOffset) + 1)
                 }
                 ScrollView {
                     ForEach(categories, id: \.self) { category in
-                        ResuableNavigationView(category: category)
+                        CategoryDetailView(category: category)
                     }
                     .background(GeometryReader { proxy -> Color in
                         DispatchQueue.main.async {
                             let scaleLevel = proxy.frame(in: .named("scroll")).origin.y / 150
                             if scaleLevel >= 0 {
-                                offset = scaleLevel
+                                scaleOffset = scaleLevel
                             }
                         }
                         return Color.clear
@@ -35,7 +37,8 @@ struct CategoryView: View {
                 }.coordinateSpace(name: "scroll")
 
             } else {
-                LeafView(viewModel: LeafViewModel(category: category))
+                // Child/Leaf view
+                LeafView(category: category)
             }
         }
         .navigationTitle(category.label)
@@ -43,11 +46,11 @@ struct CategoryView: View {
     }
 }
 
-struct ResuableNavigationView: View {
+struct CategoryDetailView: View {
     var category: Category
     
     @ViewBuilder
-    func imageItem(image: String) -> some View {
+    func imageCategory(image: String) -> some View {
         ZStack {
             ImageView(imageName: image)
             Text("\(category.label)")
@@ -58,7 +61,7 @@ struct ResuableNavigationView: View {
         }
     }
     
-    var textItem: some View {
+    var textCategory: some View {
         VStack {
             HStack {
                 Text("\(category.label)")
@@ -75,9 +78,9 @@ struct ResuableNavigationView: View {
     var body: some View {
         NavigationLink(destination: CategoryView(category: category)) {
             if let image = category.image {
-                imageItem(image: image)
+                imageCategory(image: image)
             } else {
-                textItem
+                textCategory
                     .contentShape(Rectangle())
             }
         }
