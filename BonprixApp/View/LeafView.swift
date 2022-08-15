@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LeafView: View {
     var viewModel: LeafViewModel
-    @State var text: String = ""
 
     var body: some View {
         VStack {
@@ -17,7 +16,6 @@ struct LeafView: View {
                 WebView(model: WebViewModel(url: url))
             }
         }
-        .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Suchen")
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(viewModel.category?.label ?? "Shop")
     }

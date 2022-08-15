@@ -8,7 +8,6 @@
 import Foundation
 
 final class LeafViewModel {
-    var webModel: WebViewModel?
     var category: Category?
     
     var label: String? {
@@ -21,8 +20,5 @@ final class LeafViewModel {
     
     init(category: Category?) {
         self.category = category
-        if category?.url != nil {
-            self.webModel = WebViewModel(url: (category?.url)!)
-        }
     }
 }
