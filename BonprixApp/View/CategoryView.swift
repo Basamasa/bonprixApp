@@ -23,7 +23,7 @@ struct CategoryView: View {
                 }
                 ScrollView {
                     ForEach(categories, id: \.self) { category in
-                        CategoryDetailView(category: category)
+                        CategoryListView(category: category)
                     }
                     .background(GeometryReader { proxy -> Color in
                         DispatchQueue.main.async {
@@ -46,7 +46,7 @@ struct CategoryView: View {
     }
 }
 
-struct CategoryDetailView: View {
+struct CategoryListView: View {
     var category: Category
     
     @ViewBuilder
